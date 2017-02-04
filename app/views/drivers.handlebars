@@ -1,0 +1,72 @@
+<span class="center-box">
+<span class="heading"><b>DriverApp DriverId : {{driverId}}</b></span>   <button class="refreshButton" onclick="location.reload()"><b>Refresh</b></button>
+</span>
+
+<table>
+    <tr>
+        <th>Waiting</th>
+        <th>Ongoing</th>
+        <th>Complete</th>
+    </tr>
+    <tr>
+        <td>
+          {{#each results.waiting}}
+              <div class="box">
+              <span class="left">
+                  Req.Id: {{id}}
+              </span>
+              <span class="right">
+                  Cust.Id: {{customerId}}
+              </span>
+                  <div class="center">
+                      Request: {{timeDiff createdAt}} mins ago<br/>
+                  </div>
+                  <button onclick="assignRide({{../driverId}} , {{id}})"><b>Select</b></button>
+
+              </div>
+          {{/each}}
+
+        </td>
+        <td>
+          {{#each results.ongoing}}
+              <div class="box">
+              <span class="left">
+                  Req.Id: {{id}}
+              </span>
+              <span class="right">
+                  Cust.Id: {{customerId}}
+              </span>
+                  <div class="center">
+                      Request: {{timeDiff createdAt}} mins ago<br/>
+                  </div>
+                  <div class="center">
+                      Picked up: {{timeDiff ongoingTime}} mins ago<br/>
+                  </div>
+
+              </div>
+          {{/each}}
+        </td>
+        <td>
+          {{#each results.complete}}
+              <div class="box">
+              <span class="left">
+                  Req.Id: {{id}}
+              </span>
+              <span class="right">
+                  Cust.Id: {{customerId}}
+              </span>
+                  <div class="center">
+                      Request: {{timeDiff createdAt}} mins ago<br/>
+                  </div>
+                  <div class="center">
+                      Picked up: {{timeDiff ongoingTime}} mins ago<br/>
+                  </div>
+                  <div class="center">
+                      Complete: {{timeDiff completeTime}} mins ago<br/>
+                  </div>
+
+              </div>
+          {{/each}}
+        </td>
+    </tr>
+</table>

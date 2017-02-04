@@ -1,0 +1,26 @@
+<span class="center-box">
+<span class="heading"><b>DashBoard</span>   <button class="refreshButton" onclick="location.reload()"><b>Refresh</b></button>
+</span>
+
+<table class="dashboard">
+    <tr>
+        <th>Request Id</th>
+        <th>Customer Id</th>
+        <th>Time Elapsed</th>
+        <th>Status</th>
+        <th>Driver</th>
+    </tr>
+    {{#each requests}}
+      <tr>
+          <td>{{id}}</td>
+          <td>{{customerId}}</td>
+          <td>{{timeElapsed updatedAt}}</td>
+          <td>{{status}}</td>
+          {{#if driver}}
+              <td>{{driver}}</td>
+          {{else}}
+              <td>None</td>
+          {{/if}}
+      </tr>
+    {{/each}}
+</table>
