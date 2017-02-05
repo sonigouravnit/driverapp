@@ -9,7 +9,7 @@ var config = {
       name: 'doc'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/doc-development'
+    db: 'mongodb://ds143539.mlab.com:43539/heroku_hf2m23lb'
   },
 
   test: {
@@ -27,7 +27,7 @@ var config = {
       name: 'doc'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/doc-production'
+    db: 'mongodb://ds143539.mlab.com:43539/heroku_hf2m23lb'
   }
 };
 
